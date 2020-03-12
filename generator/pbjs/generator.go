@@ -18,7 +18,7 @@ import Axios from 'axios';
 
 {{$twirpPrefix := .TwirpPrefix -}}
 
-const getServiceMethodName = (fn: any): string => {
+export const getServiceMethodName = (fn: any): string => {
     {{- range $s := .Services}}
 	{{- range $m := $s.Methods}}
 	if (fn === {{$s.Package}}.{{$s.Name}}.prototype.{{lowerCamel $m}}) {
